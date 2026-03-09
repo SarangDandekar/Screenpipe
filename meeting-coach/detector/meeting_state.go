@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/your-username/meeting-coach/config"
+	"github.com/your-username/meeting-coach/logs"
 	"github.com/your-username/meeting-coach/models"
 	"github.com/your-username/meeting-coach/report"
 	"github.com/your-username/meeting-coach/screenpipe"
@@ -149,6 +150,8 @@ func (md *MeetingDetector) onMeetingStarted() {
 	md.state.StartTime = time.Now()
 	md.state.FailureCount = 0
 
+	logs.LogMeetingStarted(md.state.App, md.state.StartTime)
+
 	// Save baseline TCP count to detect significant drops
 	md.state.BaselineTCP = md.state.ActiveTCPCount
 
@@ -264,6 +267,8 @@ func (md *MeetingDetector) onMeetingEnded() {
 	md.state.Phase = models.PhaseReporting
 	md.state.EndTime = time.Now()
 	duration := md.state.EndTime.Sub(md.state.StartTime)
+
+	logs.LogMeetingEnded(md.state.App, md.state.StartTime, md.state.EndTime, md.state.EndReason)
 
 	log.Println()
 	log.Println("🔴 ══════════════════════════════════════")
