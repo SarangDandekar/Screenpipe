@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/your-username/meeting-coach/config"
-	"github.com/your-username/meeting-coach/models"
+	"github.com/SarangDandekar/Screenpipe/meeting-coach/config"
+	"github.com/SarangDandekar/Screenpipe/meeting-coach/models"
 )
 
 type Client struct {

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Meeting Coach</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: Arial, sans-serif; padding: 12px; background:#f6f7fb; color:#111 }
+    header { display:flex; justify-content:space-between; align-items:center; }
+    section { display:grid; grid-template-columns: 1fr 320px; gap: 12px; margin-top:12px; }
+    #meeting-console { height:260px; overflow:auto; background:#0b0b0b; color:#c5f0b3; padding:8px; font-family: monospace; font-size:12px; border-radius:4px; }
+    table { width:100%; border-collapse: collapse; margin-top:8px; background:white; border-radius:4px; }
+    th, td { padding:6px 8px; border-bottom:1px solid #eee; text-align:left; font-size:13px }
+    #summary div { margin-bottom:6px; padding:6px; background:white; border-radius:4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AI MEETING COACH — DASHBOARD</h1>
+    <div id="time"></div>
+  </header>
+
+  <section>
+    <div>
+      <h3>Meeting</h3>
+      <div id="meeting-state">No meeting</div>
+
+      <h4>Meeting Console</h4>
+      <div id="meeting-console">Waiting for updates...</div>
+
+      <h3>Today's Activity</h3>
+      <table>
+        <thead><tr><th>Time</th><th>App</th><th>URL</th><th>Duration</th></tr></thead>
+        <tbody id="activity-table-body"></tbody>
+      </table>
+    </div>
+
+    <div>
+      <h3>App Summary</h3>
+      <div id="summary"></div>
+    </div>
+  </section>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

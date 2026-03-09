@@ -1,3 +1,3 @@
-module github.com/your-username/meeting-coach
+module github.com/SarangDandekar/Screenpipe/meeting-coach
 
-go 1.25.0
+go 1.21

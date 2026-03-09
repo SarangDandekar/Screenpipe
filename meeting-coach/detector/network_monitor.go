@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/your-username/meeting-coach/models"
+	"github.com/SarangDandekar/Screenpipe/meeting-coach/models"
 )
 
 type NetworkMonitor struct{}
