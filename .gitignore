@@ -1,0 +1,15 @@
+# Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+
+# meeting-coach binary
+meeting-coach/meeting-coach.exe
+
+# Reports (personal data)
+meeting-coach/reports/
+
+# Go build files
+meeting-coach/*.exe
+
