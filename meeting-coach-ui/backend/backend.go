@@ -29,7 +29,7 @@ func (w *EventWriter) Write(p []byte) (int, error) {
 
 	if w.ctx != nil {
 		line := strings.TrimRight(string(p), "\r\n")
-		_ = runtime.EventsEmit(w.ctx, "detector:log", map[string]interface{}{"line": line})
+		runtime.EventsEmit(w.ctx, "detector:log", map[string]interface{}{"line": line})
 	}
 	return len(p), nil
 }
@@ -81,7 +81,7 @@ func (a *App) Start(ctx context.Context) error {
 			case <-a.ticker.C:
 				appName, browserURL, _, err := a.spClient.GetCurrentApp()
 				if err != nil {
-					_ = runtime.EventsEmit(ctx, "detector:log", map[string]interface{}{
+					runtime.EventsEmit(ctx, "detector:log", map[string]interface{}{
 						"line": "Screenpipe unreachable: " + err.Error(),
 					})
 					continue
@@ -95,7 +95,7 @@ func (a *App) Start(ctx context.Context) error {
 
 				entries := a.tracker.GetTodayEntries()
 				summary := a.tracker.GetAppSummary()
-				_ = runtime.EventsEmit(ctx, "activity:update", map[string]interface{}{
+				runtime.EventsEmit(ctx, "activity:update", map[string]interface{}{
 					"entries": entries,
 					"summary": summary,
 				})
