@@ -7,7 +7,7 @@ import (
 	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/options"
 
-	"github.com/your-username/meeting-coach-ui/backend"
+	"github.com/SarangDandekar/Screenpipe/meeting-coach-ui/backend"
 )
 
 //go:embed all:frontend/dist

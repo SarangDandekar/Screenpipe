@@ -10,9 +10,9 @@ import (
 
 	"github.com/wailsapp/wails/v2/pkg/runtime"
 
-	"github.com/your-username/meeting-coach/detector"
-	"github.com/your-username/meeting-coach/logs"
-	"github.com/your-username/meeting-coach/screenpipe"
+	"github.com/SarangDandekar/Screenpipe/meeting-coach/detector"
+	"github.com/SarangDandekar/Screenpipe/meeting-coach/logs"
+	"github.com/SarangDandekar/Screenpipe/meeting-coach/screenpipe"
 )
 
 // EventWriter writes logs to stdout and emits them to frontend

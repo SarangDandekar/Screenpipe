@@ -1,8 +1,11 @@
-module meeting-coach-ui
+module github.com/SarangDandekar/Screenpipe/meeting-coach-ui
 
-go 1.21
+go 1.22.0
 
-require github.com/wailsapp/wails/v2 v2.11.0
+require (
+	github.com/SarangDandekar/Screenpipe/meeting-coach v0.0.0-00010101000000-000000000000
+	github.com/wailsapp/wails/v2 v2.11.0
+)
 
 require (
 	github.com/bep/debounce v1.2.1 // indirect
@@ -35,4 +38,4 @@ require (
 )
 
 // Local replace — use your local meeting-coach folder instead of trying to download from GitHub
-replace github.com/your-username/meeting-coach => ../meeting-coach
+replace github.com/SarangDandekar/Screenpipe/meeting-coach => ../meeting-coach
